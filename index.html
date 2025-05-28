@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtE-cert - Online Art Contest</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="authBanner" class="auth-banner">Login required to register or participate</div>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <img src="ArtE-cert_logo.png" alt="ArtE-cert Logo" class="loading-logo">
+            <p>Loading ArtE-cert Contest...</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content" id="mainContent">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="navbar-container">
+                <div class="logo">ArtE-cert</div>
+                <div class="menu-toggle" id="mobileMenu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="#home" class="active">Home</a></li>
+                    <li class="nav-item"><a href="#register">Register</a></li>
+                    <li class="nav-item"><a href="#about">About</a></li>
+                    <li class="nav-item"><a href="#contact">Contact</a></li>
+                    <li class="nav-item" id="authItem">
+                    <a href="login/index.html">Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <div class="hero">
+                <h1>Showcase Your Creativity & Get E-Certificate</h1>
+                <p>Participate in our online art contest and receive a digital certificate of participation</p>
+                <button class="cta-btn" id="participateBtn">Participate Now</button>
+            </div>
+            
+            <div class="contest-rules">
+                <h2>How to Participate</h2>
+                <ol>
+                    <li>Fill out the simple registration form</li>
+                    <li>Upload your artwork (Image, max 2MB)</li>
+                    <li>Submit your entry</li>
+                    <li>Receive your E-Certificate via email</li>
+                    <li>Winners will be contacted via WhatsApp</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Register Section -->
+        <section id="register" class="section" >
+            <div class="form-container">
+                <h2>Register for the Contest</h2>
+                <form id="registrationForm" method="POST" action="connect.php" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="name">Name on Certificate</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp Number (for results)</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="artwork_path">Upload Your Artwork (Image, max 2MB)</label>
+                        <input type="file" id="artwork_path" name="artwork_path" accept=".jpg,.jpeg,.png" required>
+                        <small>Max file size: 2MB (JPEG/PNG only)</small>
+                        <div class="preview-container" id="previewContainer"></div>
+                    </div>
+                    <button type="submit" class="submit-btn">Submit Entry</button>
+                </form>
+                <div id="successMessage" class="success-message"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="about-container">
+                <h2>About ArtE-cert</h2>
+                <p>ArtE-cert is an online platform dedicated to helping artists showcase their creativity to the world. Our contests provide artists with recognition and digital certificates to celebrate their participation.</p>
+                <p>Every participant receives an E-Certificate, and winners get special recognition. Our goal is to make art accessible and rewarding for everyone.</p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="contact-container">
+                <h2>Contact Us</h2>
+                <p>Have questions? Reach out to us on Instagram:</p>
+                <div class="social-contact">
+                    <a href="https://instagram.com/ArtE-cert" class="instagram-btn" target="_blank">
+                        <i class="fab fa-instagram"></i> @ArtE-cert
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

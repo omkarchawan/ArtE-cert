@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="logo">Login</div>
+        
+        <!-- Phone Input Step -->
+        <div id="phone-step" class="step active">
+            <h1>Enter Your Phone Number</h1>
+            <p>We'll send you a verification code</p>
+            
+            <div class="input-group">
+                <select id="country-code">
+                    <option value="+1">🇺🇸 +1</option>
+                    <option value="+91">🇮🇳 +91</option>
+                    <option value="+44">🇬🇧 +44</option>
+                    <!-- Add more country codes as needed -->
+                </select>
+                <input type="tel" id="phone-number" placeholder="Phone number" autocomplete="tel">
+            </div>
+            
+            <div id="recaptcha-container"></div>
+            <div id="phone-error" class="error-message"></div>
+            
+            <button id="send-otp-btn" class="btn primary">
+                <span class="btn-text">Send Verification Code</span>
+                <img src="assets/loading-spinner.svg" class="spinner hidden">
+            </button>
+        </div>
+        
+        <!-- OTP Verification Step -->
+        <div id="otp-step" class="step">
+            <h1>Enter Verification Code</h1>
+            <p id="otp-sent-to">Sent to +1 234 567 8900</p>
+            
+            <div class="otp-inputs">
+                <input type="text" maxlength="1" class="otp-digit" autocomplete="one-time-code">
+                <input type="text" maxlength="1" class="otp-digit">
+                <input type="text" maxlength="1" class="otp-digit">
+                <input type="text" maxlength="1" class="otp-digit">
+                <input type="text" maxlength="1" class="otp-digit">
+                <input type="text" maxlength="1" class="otp-digit">
+            </div>
+            
+            <div id="otp-error" class="error-message"></div>
+            
+            <button id="verify-otp-btn" class="btn primary">
+                <span class="btn-text">Verify Code</span>
+                <img src="assets/loading-spinner.svg" class="spinner hidden">
+            </button>
+            
+            <button id="resend-otp-btn" class="btn text">Resend Code</button>
+            <button id="change-number-btn" class="btn text">Change Phone Number</button>
+        </div>
+        
+        <!-- Success Step -->
+        <div id="success-step" class="step">
+            <div class="success-icon">✓</div>
+            <h1>Verified Successfully!</h1>
+            <p>Your phone number has been verified</p>
+            <button id="continue-btn" class="btn primary">Continue</button>
+        </div>
+    </div>
+    <script src="firebase-config.js"></script>
+    <script src="app.js"></script>
+    <script>
+        // Add this to your existing app.js or as a separate script
+        function handleLoginSuccess() {
+            // Set login status and redirect back to main page
+            localStorage.setItem('artecertLoggedIn', 'true');
+            const redirectUrl = new URL('../index.html', window.location.href);
+            redirectUrl.searchParams.append('login', 'success');
+            window.location.href = redirectUrl.toString();
+        }
+        
+        // Modify your existing verification success callback to use this
+        // In your app.js where you handle successful verification:
+        // Replace whatever success action you have with:
+        // handleLoginSuccess();
+    </script>
+    <script>
+  function onClick(e) {
+    e.preventDefault();
+    grecaptcha.enterprise.ready(async () => {
+      const token = await grecaptcha.enterprise.execute('6LccqkorAAAAACftfz7kel3emkMMLO1TJWMYaIt8', {action: 'LOGIN'});
+    });
+  }
+</script>
+
+    <script src="firebase-config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
