@@ -3,13 +3,12 @@
 
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBxjRL6SZjvI8Ty5ecNNYxtpxrFVUWJQAM",
-  authDomain: "fir-login-bf621.firebaseapp.com",
-  projectId: "fir-login-bf621",
-  storageBucket: "fir-login-bf621.firebasestorage.app",
-  messagingSenderId: "421732259614",
-  appId: "1:421732259614:web:1983a818eacd1a5d70db0f",
-  measurementId: "G-YQ3SPSDW5T"
+  apiKey: "AIzaSyC8Z9w3pe3Dokawkma6AYGcW_VGKb99rgU",
+  authDomain: "onlineart-5b03d.firebaseapp.com",
+  projectId: "onlineart-5b03d",
+  storageBucket: "onlineart-5b03d.firebasestorage.app",
+  messagingSenderId: "1003950036864",
+  appId: "1:1003950036864:web:aeb88602bd9baf9f859365"
 };
 
 
