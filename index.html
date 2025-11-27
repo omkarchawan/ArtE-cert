@@ -8,7 +8,12 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="authBanner" class="auth-banner">Login required to register or participate</div>
+
+    <!-- Auth Banner -->
+    <div id="authBanner" class="auth-banner">
+        Login required to register or participate
+    </div>
+
     <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-content">
@@ -19,6 +24,7 @@
 
     <!-- Main Content -->
     <div class="main-content" id="mainContent">
+
         <!-- Navigation -->
         <nav class="navbar">
             <div class="navbar-container">
@@ -34,7 +40,7 @@
                     <li class="nav-item"><a href="#about">About</a></li>
                     <li class="nav-item"><a href="#contact">Contact</a></li>
                     <li class="nav-item" id="authItem">
-                    <a href="login/index.html">Login</a>
+                        <a href="login/index.html">Login</a>
                     </li>
                 </ul>
             </div>
@@ -47,7 +53,6 @@
                 <p>Participate in our online art contest and receive a digital certificate of participation</p>
                 <button class="cta-btn" id="participateBtn">Participate Now</button>
             </div>
-            
             <div class="contest-rules">
                 <h2>How to Participate</h2>
                 <ol>
@@ -58,10 +63,16 @@
                     <li>Winners will be contacted via WhatsApp</li>
                 </ol>
             </div>
-        </section><br>
+        </section>
+
+        <!-- Banner -->
+        <a href="https://shrinkearn.com/ref/omkarchawan123">
+            <img src="https://shrinkearn.com/webroot/modern_theme/img/728x90.gif" 
+                 title="Shorten URLs and Earn Money" />
+        </a>
 
         <!-- Register Section -->
-        <section id="register" class="section" >
+        <section id="register" class="section">
             <div class="form-container">
                 <h2>Register for the Contest</h2>
                 <form id="registrationForm" method="POST" action="connect.php" enctype="multipart/form-data">
@@ -110,15 +121,25 @@
                 </div>
             </div>
         </section>
+
     </div>
 
-  <!-- Your full-page script -->
-  <script type="text/javascript">
-    var app_url = 'https://shrinkearn.com/';
-    var app_api_token = '499010cf37eaa9e80c3b30401e48380a83cc8326';
-    var app_advert = 2;
-    var app_domains = ["https://omkarchawan.github.io/ArtE-cert/"];
-  </script>
-  <script src="script.js"></script>
+    <!-- Right Side Ad Box -->
+    <div style="position: fixed; right: 0; top: 40%; background-color: #f9f9f9; padding: 10px; border: 2px solid #aaa; border-radius: 10px; z-index: 999;">
+        <a href="https://tpi.li/BTaujMkojZ" target="_blank" style="text-decoration: none; color: #333; font-weight: bold;">
+            🎁 Watch Ad & Earn Coins!
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+        var app_url = 'https://shrinkearn.com/';
+        var app_api_token = '499010cf37eaa9e80c3b30401e48380a83cc8326';
+        var app_advert = 2;
+        var app_domains = ["https://omkarchawan.github.io/ArtE-cert/"];
+    </script>
+    <script src='https://tpi.li/BTaujMkojZ'></script>
+    <script src="script.js"></script>
+
 </body>
 </html>
